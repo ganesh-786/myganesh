@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Citizenship</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Nepali Date Picker CSS -->
+    <link rel="stylesheet" href="//unpkg.com/nepali-date-picker@2.0.2/dist/nepaliDatePicker.min.css" />
+
+    {% include "base.html" %}
+</head>
+<body>
+    <br><br><br>
+    {% block content %}
+    <!-- ::::::::::Form::::::::::::     -->
+    <div class="form-container mx-1 mt-2 p-2">
+        <div class="container" style="width: 678px; height: 437px;">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                        class="active" aria-current="true"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fDRrJTIwaGQlMjB3YWxscGFwZXIlMjBmb3JtJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww"
+                            class="d-block w-100 img-fluid" alt="...">
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1><strong>Please, fill valid Info</strong></h1>
+                                <p class="d-none d-md-block">We seek for the accuracy.</p>
+                                <p><a class="btn btn-lg btn-success" href="#">Verify Now!</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1658101617638-b8653e27f7f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fDRrJTIwaGQlMjB3YWxscGFwZXIlMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D"
+                            class="d-block w-100 img-fluid" alt="...">
+    
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>Let's Go</h1>
+                                <p class="d-none d-md-block">We use real-time facial recognition system.</p>
+                                <p><a class="btn btn-lg btn-success" href="#">Learn more</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8NGslMjBoZCUyMHdhbGxwYXBlciUyMGZvcm0lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D"
+                            class="d-block w-100 img-fluid" alt="...">
+    
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1>Verify with us!</h1>
+                                <p class="d-none d-md-block">Share your experience.</p>
+                                <p><a class="btn btn-lg btn-success" href="#">Share</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <h1 class="text-center">Citizenship Verification</h1>
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
+            <div id="formFieldsSection" class="container">
+                <div class="row">
+    
+                    <div class="col-md-6 order-md-1 overflow-hidden">
+                        <h4 class="text-center">Front Fillup!</h4>
+    
+                        <div class="mb-3" id="group-citizenship">
+                            <label for="englishCitizenship" class="form-label"><strong>Citizenship
+                                    No.</strong></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="englishCitizenship" name="englishCitizenship"
+                                    placeholder="23-12-12-2838" aria-label="Citizenship Number" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-citizenship" aria-expanded="false"
+                                    aria-controls="panel-citizenship">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-citizenship">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedcitizenship">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('citizenship')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-name1">
+                            <label for="englishname1" class="form-label"><strong>Name</strong></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="englishname1" name="englishname1"
+                                    placeholder="Enter Your Name!" aria-label="name" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-name" aria-expanded="false" aria-controls="panel-name">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-name">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedname1">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('name')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-surname">
+                            <label for="englishsurname" class="form-label"><strong>Surname</strong></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="englishsurname" name="englishsurname"
+                                    placeholder="Enter Your Surname" aria-label="name" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-englishsurname" aria-expanded="false"
+                                    aria-controls="panel-englishsurname">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-englishsurname">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedsurname">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('englishsurname')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="gender" class="form-label"><strong>Gender</strong></label>
+                            <select name="gender" id="gender" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>पुरुष</option>
+                                <option>महिला</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-3" id="group-place1">
+                            <label for="englishplace1" class="form-label"><strong>District</strong></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="englishplace1" name="englishplace1"
+                                    placeholder="Sunsari" aria-label="Birthplace" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-place1" aria-expanded="false" aria-controls="panel-place1">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-place1">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedplace1">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('place1')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-permanent1">
+                            <label for="englishpermanent1" class="form-label"><strong>Permanent
+                                    Address</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishpermanent1" class="form-control" id="englishpermanent1"
+                                    placeholder="Sunsari, Dharan-15" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-permanent1" aria-expanded="false"
+                                    aria-controls="panel-permanent1">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-permanent1">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedpermanent1">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('permanent1')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="birth1" class="form-label"><strong>Birthdate(BS)</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="birth1" class="form-control bod-picker" id="birth1"
+                                    placeholder="2055-12-14" required />
+                                <button id="clear-bth"
+                                    class="btn btn-outline-secondary badge bg-light text-secondary-emphasis round-pill"
+                                    onclick="">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-father">
+                            <label for="englishfather" class="form-label"><strong>Father's name</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishfather" class="form-control" id="englishfather"
+                                    placeholder="Father's Name!" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-father" aria-expanded="false" aria-controls="panel-father">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-father">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedfather">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('father')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-father">
+                            <label for="englishfathersur" class="form-label"><strong>Father's
+                                    Surname</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishfathersur" class="form-control" id="englishfathersur"
+                                    placeholder="Father's Name!" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-fathersurname" aria-expanded="false"
+                                    aria-controls="panel-fathersurname">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-fathersurname">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedfathersur">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('fathersurname')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cititype1" class="form-label"><strong>Citizenship Type</strong></label>
+                            <select id="cititype1" name="cititype1" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Citizenship by Descent</option>
+                                <option>Naturalized Citizenship</option>
+                                <option>Honorary Citizenship</option>
+                                <option>NRN Citizenship</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-3" id="group-fatheradd">
+                            <label for="englishfatheradd" class="form-label"><strong>Father's
+                                    Address</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishfatheradd" class="form-control" id="englishfatheradd"
+                                    placeholder="Father's Citizenship Address!" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-fatheradd" aria-expanded="false" aria-controls="panel-fatheradd">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-fatheradd">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedfatheradd">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('fatheradd')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3" id="group-mother">
+                            <label for="englishmother" class="form-label"><strong>Mother's name</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishmother" class="form-control" id="englishmother"
+                                    placeholder="Mother's Name!" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-mother" aria-expanded="false" aria-controls="panel-mother">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-mother">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedmother">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('mother')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cititype2" class="form-label"><strong>Citizenship Type</strong></label>
+                            <select id="cititype2" name="cititype2" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Citizenship by Descent</option>
+                                <option>Naturalized Citizenship</option>
+                                <option>Honorary Citizenship</option>
+                                <option>NRN Citizenship</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-3" id="group-motheradd">
+                            <label for="englishmotheradd" class="form-label"><strong>Mother's
+                                    Address</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="englishmotheradd" class="form-control" id="englishmotheradd"
+                                    placeholder="Mother's Citizenship Address!" required />
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse"
+                                    data-bs-target="#panel-motheradd" aria-expanded="false" aria-controls="panel-motheradd">
+                                    Translate
+                                </button>
+                            </div>
+                            <div class="collapse" id="panel-motheradd">
+                                <div class="card card-body">
+                                    <span><strong>NP Trans:</strong></span>
+                                    <p id="translatedmotheradd">--</p>
+                                    <button type="button"
+                                        class="btn btn-outline-success badge bg-success-subtle text-success-emphasis round-pill"
+                                        onclick="confirmTranslation('motheradd')">
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 order-md-2 overflow-hidden">
+                        <h4 class="text-center">Back Fillup!</h4>
+                        <div class="mb-3">
+                            <label for="name2" class="form-label"><strong>Full name</strong></label>
+                            <input type="text" class="form-control" id="name2" name="name2"
+                                placeholder="Enter Your Correct Full Name!" aria-label="First name" required />
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="birth2" class="form-label"><strong>Birthdate(AD)</strong></label>
+                            <input type="date" class="form-control" id="birth2" name="birth2"
+                                placeholder="Enter Your Birthdate!" aria-label="Birthdate" required maxlength="10" />
+                            <span class="error" id="errorMessage" style="color: red"></span>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="place2" class="form-label"><strong>Birthplace</strong></label>
+                            <input type="text" class="form-control" id="place2" name="place2"
+                                placeholder="Sunsari, Dharan-5" aria-label="Birthplace" required />
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="permanent2" class="form-label"><strong>Permanent Address</strong></label>
+                            <input type="text" name="permanent2" class="form-control" id="permanent2"
+                                placeholder="Sunsari, Dharan-15" required />
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="issue" class="form-label"><strong>Date Issue(BS)</strong></label>
+                            <div class="input-group">
+                                <input type="text" name="issue" class="form-control bod-picker" id="issue"
+                                    placeholder="2070-10-14" required />
+                                <button id="clear-it"
+                                    class="btn btn-outline-secondary badge bg-light text-secondary-emphasis round-pill"
+                                    onclick="">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div id="citizenshipValidationSection" class="container mt-4">
+                <h1 class="my-4 py-4 text-center">Citizenship Validation</h1>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="frontImage" class="form-label">Upload Front of Citizenship:</label>
+                        <input type="file" class="form-control" id="frontImage" name="front" accept="image/*" required />
+                        <div class="validation-errors" id="frontErrors"></div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="backImage" class="form-label">Upload Back of Citizenship:</label>
+                        <input type="file" class="form-control" id="backImage" name="back" accept="image/*" required />
+                        <div class="validation-errors" id="backErrors"></div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <strong>Front Preview:</strong>
+                        <img id="frontPreview" src="#" alt="Front Preview" class="img-fluid"
+                            style="display: none; max-height: 200px;" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <strong>Back Preview:</strong>
+                        <img id="backPreview" src="#" alt="Back Preview" class="img-fluid"
+                            style="display: none; max-height: 200px;" />
+                    </div>
+                </div>
+                <div id="validationResult" class="result"></div>
+            </div>
+
+            <!-- ::::::::::::Camera:::::::::: -->
+            <div id="cameraValidationSection" class="container">
+                <h1 class="text-center">Camera Validation</h1>
+            
+                <!-- Enclose the video element within the video-container -->
+                <div class="video-container d-flex justify-content-center">
+                    <video id="video" autoplay playsinline></video>
+                    <div class="face-overlay"></div>
+                    <!-- Face-shaped overlay -->
+                </div>
+                <div class="d-flex justify-content-sm-center">
+                    <canvas id="canvas" style="display: none" class="align-items-center"></canvas>
+            
+                    <button id="startBtn" class="btn btn-outline-success" type="button">
+                        Start Validation
+                    </button>
+                    <div id="progress-bar">
+                        <div id="progress" class="my-2 mx-1"></div>
+                    </div>
+                    <div id="results" class="my-2 mx-1"></div>
+                </div>
+            </div>
+
+            <div class="container d-grid gap-2 col-6 mx-auto mt-4">
+                <button type="submit" class="btn btn-outline-success" id="submitbtn">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+
+    {% endblock %}
+
+    <script src="//code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="//unpkg.com/nepali-date-picker@2.0.2/dist/nepaliDatePicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".bod-picker").nepaliDatePicker({
+                dateFormat: "%D, %M %d, %y",
+                closeOnDateSelect: true,
+            });
+
+            $("#clear-bth").on("click", function (event) {
+                $(".bod-picker").val("");
+            });
+            $("#clear-it").on("click", function (event) {
+                $(".bod-picker").val("");
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Citizenship Number Validation
+               document
+                .getElementById("englishCitizenship")
+                .addEventListener("input", function (e) {
+                    let value = e.target.value.replace(/\D/g, "").slice(0, 10); // Limit to 10 digits (2+2+2+4)
+                    let formattedValue = value.replace(
+                        /(\d{2})(\d{2})?(\d{2})?(\d{0,4})?/,
+                        function (_, p1, p2, p3, p4) {
+                            let result = p1;
+                            if (p2) result += "-" + p2;
+                            if (p3) result += "-" + p3;
+                            if (p4) result += "-" + p4; // added p4
+                            return result;
+                        }
+                    );
+                    e.target.value = formattedValue;
+                });
+            // Name Fields: Prevent Numbers and Auto-fill
+            document
+                .getElementById("englishname1")
+                .addEventListener("input", function () {
+                    const nameInput = this.value.replace(/[0-9]/, ""); // Remove any numbers
+                    this.value = nameInput;
+
+                    // Auto-fill other name fields
+                    document.getElementById("name2").value = nameInput;
+                });
+
+            document
+                .getElementById("englishplace1")
+                .addEventListener("input", function () {
+                    const nameInput = this.value.replace(/""/, ""); // Remove any numbers
+                    this.value = nameInput;
+
+                    // Auto-fill other name fields
+                    document.getElementById("place2").value = nameInput;
+                });
+
+            document
+                .getElementById("englishpermanent1")
+                .addEventListener("input", function () {
+                    const nameInput = this.value.replace(/""/, ""); // Remove any numbers
+                    this.value = nameInput;
+
+                    // Auto-fill other name fields
+                    document.getElementById("permanent2").value = nameInput;
+                });
+
+            document
+                .getElementById("englishfather")
+                .addEventListener("input", function () {
+                    const nameInput = this.value.replace(/[0-9]/, ""); // Remove any numbers
+                    this.value = nameInput;
+                });
+
+            document
+                .getElementById("englishmother")
+                .addEventListener("input", function () {
+                    const nameInput = this.value.replace(/[0-9]/, ""); // Remove any numbers
+                    this.value = nameInput;
+                });
+
+            // Date Validation: Ensures date format
+            document
+                .getElementById("birth2")
+                .addEventListener("input", function () {
+                    let input = this.value;
+                    let errorMessage = document.getElementById("errorMessage");
+
+                    // Regular expression to match "YYYY-MM-DD" format
+                    let datePattern = /^(\d{4})-(\d{2})-(\d{2})$/;
+                    let match = input.match(datePattern);
+
+                    if (!match) {
+                        errorMessage.textContent =
+                            "Date must be in YYYY-MM-DD format (e.g., 2025-12-14)";
+                        return;
+                    }
+
+                    let year = parseInt(match[1], 10);
+                    let month = parseInt(match[2], 10);
+                    let day = parseInt(match[3], 10);
+
+                    // Get today's date
+                    let today = new Date();
+                    let currentYear = today.getFullYear();
+                    let currentMonth = today.getMonth() + 1;
+                    let currentDay = today.getDate();
+
+                    // Validate date parts
+                    if (month < 1 || month > 12 || day < 1 || day > 31) {
+                        errorMessage.textContent = "Invalid date!";
+                        return;
+                    }
+
+                    // Ensure the entered date is not in the future
+                    if (
+                        year > currentYear ||
+                        (year === currentYear && month > currentMonth) ||
+                        (year === currentYear &&
+                            month === currentMonth &&
+                            day > currentDay)
+                    ) {
+                        errorMessage.textContent = "Date cannot be in the future!";
+                        return;
+                    }
+
+                    errorMessage.textContent = ""; // Clear error if valid
+                });
+        });
+    </script>
+
+    <!-- ::::::::::::::::::::::::Auto translatio::::::::: -->
+    <!-- <script>
+        // Improved Translation function using Microsoft Translator API for optimal English-to-Nepali translation
+            async function translateToNepali(text) {
+                // Microsoft Translator API endpoint for translating to Nepali (language code "ne")
+                const msApiUrl = `https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ne`;
+                try {
+                    const response = await fetch(msApiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Ocp-Apim-Subscription-Key": "YOUR_SUBSCRIPTION_KEY", // Replace with your key
+                            "Ocp-Apim-Subscription-Region": "YOUR_REGION",         // Replace with your region (e.g., "global" or "southeastasia")
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify([{ Text: text }])
+                    });
+                    const data = await response.json();
+                    // Microsoft Translator returns an array of translations
+                    if (data[0] && data[0].translations && data[0].translations[0] && data[0].translations[0].text) {
+                        return data[0].translations[0].text;
+                    } else {
+                        console.warn("No translation found by Microsoft Translator. Using fallback.");
+                        return await fallbackTranslation(text); // fallback function remains the same
+                    }
+                } catch (error) {
+                    console.error("Translation error:", error);
+                    return "Failed to translate. Please try again.";
+                }
+            }
+
+    </script> -->
+    
+    <script>
+        // Debounce function to limit API calls while typing
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        // Primary translation function: First try Google Cloud Translation API, then fall back to MyMemory
+        async function translateToNepali(text) {
+            // Google Cloud Translation API endpoint – replace YOUR_API_KEY with your actual key
+            const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY&q=${encodeURIComponent(text)}&target=ne&source=en`;
+
+            try {
+                const googleResponse = await fetch(googleApiUrl);
+                const googleData = await googleResponse.json();
+
+                if (googleData.data &&
+                    googleData.data.translations &&
+                    googleData.data.translations.length > 0 &&
+                    googleData.data.translations[0].translatedText) {
+
+                    return googleData.data.translations[0].translatedText;
+                } else {
+                    console.warn("Google API did not return a valid translation. Falling back to MyMemory.");
+                    return await translateUsingMyMemory(text);
+                }
+            } catch (error) {
+                console.error("Google translation error:", error);
+                return await translateUsingMyMemory(text);
+            }
+        }
+
+        // Existing MyMemory translation function – used as fallback if Google fails
+        async function translateUsingMyMemory(text) {
+            const myMemoryApiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|ne&mt=1&onlyprivate=0&de=trumpnp72@gmail.com`;
+            try {
+                const response = await fetch(myMemoryApiUrl);
+                const data = await response.json();
+
+                if (data.responseData && data.responseData.translatedText) {
+                    return data.responseData.translatedText;
+                } else if (data.matches && data.matches.length > 0) {
+                    return data.matches[0].translation;
+                } else {
+                    console.warn("No translation found by MyMemory. Using fallback.");
+                    return await fallbackTranslation(text);
+                }
+            } catch (error) {
+                console.error("MyMemory translation error:", error);
+                return await fallbackTranslation(text);
+            }
+        }
+
+        // Fallback Translation Function – a simple dictionary approach
+        async function fallbackTranslation(text) {
+            const dictionary = {
+                "Kathmandu": "काठमाडौं",
+                "Lalitpur": "ललितपुर",
+                "Bhaktapur": "भक्तपुर",
+                "Ramesh": "रमेश",
+                "Sharma": "शर्मा",
+                "Neupane": "न्यौपाने",
+                "Umesh": "उमेश",
+                "Dharan": "धरान",
+                "Pokhara": "पोखरा"
+                // Add more common names/places as needed.
+            };
+
+            if (dictionary[text]) {
+                return dictionary[text];
+            } else {
+                console.warn(`No dictionary entry for: ${text}. Returning original text.`);
+                return text; // Alternatively: return "अनुवाद उपलब्ध छैन"
+            }
+        }
+
+        // Mapping of field keys to corresponding element IDs
+        const fields = [
+            { key: "citizenship", english: "englishCitizenship", translated: "translatedcitizenship" },
+            { key: "name", english: "englishname1", translated: "translatedname1" },
+            { key: "englishsurname", english: "englishsurname", translated: "translatedsurname" },
+            { key: "place1", english: "englishplace1", translated: "translatedplace1" },
+            { key: "permanent1", english: "englishpermanent1", translated: "translatedpermanent1" },
+            { key: "father", english: "englishfather", translated: "translatedfather" },
+            { key: "fathersurname", english: "englishfathersur", translated: "translatedfathersur" },
+            { key: "fatheradd", english: "englishfatheradd", translated: "translatedfatheradd" },
+            { key: "mother", english: "englishmother", translated: "translatedmother" },
+            { key: "motheradd", english: "englishmotheradd", translated: "translatedmotheradd" }
+        ];
+
+        // Set up auto translation for each field
+        fields.forEach((field) => {
+            const englishInput = document.getElementById(field.english);
+            const translatedOutput = document.getElementById(field.translated);
+
+            // Debounced translation call
+            const debouncedTranslate = debounce(async () => {
+                const text = englishInput.value.trim();
+                if (text) {
+                    const translation = await translateToNepali(text);
+                    translatedOutput.textContent = translation;
+                } else {
+                    translatedOutput.textContent = "--";
+                }
+            }, 500);
+
+            // Update translation when user types if field is not readOnly
+            englishInput.addEventListener("input", () => {
+                if (!englishInput.readOnly) {
+                    debouncedTranslate();
+                }
+            });
+        });
+
+        // Confirm function: replace english input with translated text and lock the field
+        function confirmTranslation(fieldKey) {
+            const field = fields.find((f) => f.key === fieldKey);
+            if (field) {
+                const englishInput = document.getElementById(field.english);
+                const translatedOutput = document.getElementById(field.translated);
+                if (translatedOutput.textContent !== "--" && translatedOutput.textContent !== "") {
+                    englishInput.value = translatedOutput.textContent;
+                    englishInput.readOnly = true;
+                    const panel = document.getElementById("panel-" + fieldKey);
+                    if (panel) {
+                        panel.style.display = "none";
+                    }
+                } else {
+                    alert("Translation not available.");
+                }
+            }
+        }
+    </script>
+
+
+
+    <!-- Bootstrap Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // ---------- DOM ELEMENT REFERENCES ----------
+            const frontInput = document.getElementById("frontImage");
+            const backInput = document.getElementById("backImage");
+            const startBtn = document.getElementById("startBtn");
+            const validationResult = document.getElementById("validationResult");
+            const frontPreview = document.getElementById("frontPreview");
+            const backPreview = document.getElementById("backPreview");
+            const frontErrors = document.getElementById("frontErrors");
+            const backErrors = document.getElementById("backErrors");
+            const video = document.getElementById("video");
+            const canvas = document.getElementById("canvas");
+            const resultsDiv = document.getElementById("results");
+            const progressBar = document.getElementById("progress");
+            const mainForm = document.getElementById("uploadForm");
+            let submitRetryContainer = document.getElementById(
+                "submitRetryContainer"
+            );
+            const submitButtonContainer = document.getElementById(
+                "submitButtonContainer"
+            );
+            // Declare submitBtn outside the event listener scope
+            var submitBtn = document.getElementById("submitBtn");
+
+            // ---------- VARIABLES ----------
+            let stream;
+            let interval;
+            let frontValid = false;
+            let backValid = false;
+            let videoValidationComplete = false;
+            let videoFrames = [];
+
+            // ---------- FUNCTIONS ----------
+
+            /**
+             * Updates the image preview with the selected file
+             * @param {HTMLInputElement} input - The file input element.
+             * @param {HTMLImageElement} previewElement - The image element to display the preview.
+             */
+            function updatePreview(input, previewElement) {
+                if (!previewElement) {
+                    console.warn("Preview element is null. Check your HTML.");
+                    return;
+                }
+
+                if (input && input.files && input.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        previewElement.src = e.target.result;
+                        previewElement.style.display = "block";
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    previewElement.src = "#";
+                    previewElement.style.display = "none";
+                }
+            }
+
+            /**
+             * Starts the camera and sets up the video stream
+             */
+            async function startCamera() {
+                try {
+                    if (!video) {
+                        console.error("Video element not found in the DOM.");
+                        showError("Video element not found. Please check your HTML.");
+                        return;
+                    }
+
+                    stream = await navigator.mediaDevices.getUserMedia({
+                        video: true,
+                        audio: false,
+                    });
+
+                    video.srcObject = stream;
+                    video.onloadedmetadata = () => {
+                        video.play();
+                        video.style.display = "block";
+                        canvas.style.display = "block";
+                        updateProgress(0, "Camera started. Capturing frames...");
+                        captureFrames();
+                    };
+                } catch (error) {
+                    console.error("Camera access error:", error);
+                    showError(
+                        `Error accessing the camera: ${error.message}. Please grant camera permission.`
+                    );
+                }
+            }
+
+            /**
+             * Stops the camera stream
+             */
+            function stopCamera() {
+                if (stream) {
+                    stream.getTracks().forEach((track) => track.stop());
+                    video.srcObject = null;
+                    stream = null;
+                    video.style.display = "none";
+                    canvas.style.display = "none";
+                    updateProgress(0, "Camera stopped.");
+                }
+            }
+
+            /**
+             * Captures frames from the video stream
+             */
+            function captureFrames() {
+                videoFrames = [];
+                const context = canvas.getContext("2d");
+                const frameRate = 5;
+                const intervalTime = 1000 / frameRate;
+                updateProgress(10, "Capturing frames...");
+
+                let frameCount = 0;
+                const maxFrames = 25;
+
+                interval = setInterval(() => {
+                    if (frameCount >= maxFrames) {
+                        clearInterval(interval);
+                        updateProgress(25, "Frames captured.");
+                        if (videoFrames.length === 0) {
+                            showError("No frames captured. Please try again.");
+                            return;
+                        }
+                        validateUser(videoFrames);
+                        return;
+                    }
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    const frame = canvas.toDataURL("image/jpeg");
+                    videoFrames.push(frame);
+                    frameCount++;
+                }, intervalTime);
+
+                setTimeout(() => {
+                    clearInterval(interval);
+                    updateProgress(25, "Frames captured.");
+                    if (videoFrames.length === 0) {
+                        showError("No frames captured. Please try again.");
+                        return;
+                    }
+                    validateUser(videoFrames);
+                }, 5000);
+            }
+
+            /**
+             * Validates the user using the captured video frames
+             */
+            function validateUser(frames) {
+                const formData = new FormData();
+                frames.forEach((frame, index) => {
+                    const blob = dataURLtoBlob(frame);
+                    formData.append("video_frames[]", blob, `frame_${index + 1}.jpg`);
+                });
+
+                fetch("http://127.0.0.1:8000/validate_user/", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log("Backend response:", data);
+                        if (data.status === "success") {
+                            updateProgress(100, "Camera Validation successful!");
+                            resultsDiv.innerHTML = `<p class="success">${data.message}</p>`;
+                            videoValidationComplete = true;
+                            videoFrames = frames;
+                            stopCamera();
+                            displaySubmitButton();
+                            document.getElementById(
+                                "cameraValidationSection"
+                            ).style.display = "none";
+                            document.getElementById("formFieldsSection").style.display =
+                                "block";
+                        } else {
+                            updateProgress(100, "Camera Validation failed.");
+                            resultsDiv.innerHTML = `<span class="error">Error: ${data.message}</span>`;
+                            if (data.validation_results) {
+                                handleValidationDetails(data.validation_results);
+                            }
+                            videoValidationComplete = false;
+                            stopCamera();
+                            displayRetryButton();
+                        }
+                        updateSubmitButtonState();
+                    })
+                    .catch((error) => {
+                        updateProgress(100, "Error during validation.");
+                        showError(`Error during validation: ${error.message}`);
+                        videoValidationComplete = false;
+                        stopCamera();
+                        displayRetryButton();
+                        updateSubmitButtonState();
+                    });
+            }
+
+            /**
+             * Converts a data URL to a Blob object
+             * @param {string} dataURL - The data URL to convert.
+             */
+            function dataURLtoBlob(dataURL) {
+                const byteString = atob(dataURL.split(",")[1]);
+                const mimeString = dataURL.split(",")[0].split(":")[1].split(";")[0];
+                const arrayBuffer = new ArrayBuffer(byteString.length);
+                const uintArray = new Uint8Array(arrayBuffer);
+                for (let i = 0; i < byteString.length; i++) {
+                    uintArray[i] = byteString.charCodeAt(i);
+                }
+                return new Blob([arrayBuffer], {
+                    type: mimeString,
+                });
+            }
+
+            /**
+             * Updates the progress bar and its message
+             * @param {number} percentage - The progress percentage.
+             * @param {string} message - The message to display.
+             */
+            function updateProgress(percentage, message) {
+                progressBar.style.width = percentage + "%";
+                progressBar.innerText = message || "";
+            }
+
+            /**
+             * Handles displaying detailed validation results
+             */
+            function handleValidationDetails(details) {
+                resultsDiv.innerHTML = "";
+                Object.entries(details).forEach(([key, value]) => {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("validation-result");
+
+                    const title = document.createElement("h3");
+                    title.textContent = key.replace(/_/g, " ");
+                    resultDiv.appendChild(title);
+
+                    const statusPara = document.createElement("p");
+                    statusPara.textContent = `Status: ${value.status ? "Success" : "Failure"
+                        }`;
+                    statusPara.classList.add(value.status ? "success" : "error");
+                    resultDiv.appendChild(statusPara);
+
+                    const messagePara = document.createElement("p");
+                    messagePara.textContent = `Message: ${value.message}`;
+                    resultDiv.appendChild(messagePara);
+
+                    if (value.laplacian_variance !== undefined) {
+                        const variancePara = document.createElement("p");
+                        variancePara.textContent = `Laplacian Variance: ${value.laplacian_variance}`;
+                        resultDiv.appendChild(variancePara);
+                    }
+
+                    if (value.brightness !== undefined) {
+                        const brightnessPara = document.createElement("p");
+                        brightnessPara.textContent = `Brightness: ${value.brightness}`;
+                        resultDiv.appendChild(brightnessPara);
+                    }
+
+                    if (value.distance !== undefined) {
+                        const distancePara = document.createElement("p");
+                        distancePara.textContent = `Distance: ${value.distance} cm`;
+                        resultDiv.appendChild(distancePara);
+                    }
+
+                    if (value.blink_count !== undefined) {
+                        const blinkCountPara = document.createElement("p");
+                        blinkCountPara.textContent = `Blink Count: ${value.blink_count}`;
+                        resultDiv.appendChild(blinkCountPara);
+                    }
+
+                    resultsDiv.appendChild(resultDiv);
+                });
+            }
+
+            /**
+             * Displays an error message in the results area
+             * @param {string} message - The error message to display.
+             */
+            function showError(message) {
+                resultsDiv.innerHTML = `<span class="error">${message}</span>`;
+            }
+
+            /**
+             * Validates the selected file on the backend
+             */
+            async function validateFile(file, side, errorsElement, otherFile) {
+                if (!file) {
+                    errorsElement.textContent = `${side} file is missing.`;
+                    return false;
+                }
+                if (!otherFile) {
+                    errorsElement.textContent = `Other side file is missing.`;
+                    return false;
+                }
+
+                const formData = new FormData();
+                formData.append("front", file);
+                formData.append("back", otherFile);
+                try {
+                    const response = await fetch(
+                        "http://127.0.0.1:8000/citizenship_validate/",
+                        {
+                            method: "POST",
+                            body: formData,
+                        }
+                    );
+
+                    if (!response.ok) {
+                        throw new Error("Failed to validate image.");
+                    }
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        errorsElement.textContent = "";
+                        return true;
+                    } else {
+                        errorsElement.textContent = result.errors
+                            ? result.errors.join(", ")
+                            : `${side} validation failed.`;
+                        return false;
+                    }
+                } catch (error) {
+                    errorsElement.textContent = `Error validating ${side}: ${error.message}`;
+                    return false;
+                }
+            }
+
+            /**
+             * Handles file validation
+             */
+            async function handleFileValidation() {
+                validationResult.textContent = "";
+                validationResult.style.display = "none";
+
+                frontValid =
+                    frontInput.files.length > 0 && backInput.files.length > 0
+                        ? await validateFile(
+                            frontInput.files[0],
+                            "Front",
+                            frontErrors,
+                            backInput.files[0]
+                        )
+                        : false;
+
+                backValid =
+                    backInput.files.length > 0 && frontInput.files.length > 0
+                        ? await validateFile(
+                            backInput.files[0],
+                            "Back",
+                            backErrors,
+                            frontInput.files[0]
+                        )
+                        : false;
+
+                if (!frontInput.files.length) {
+                    frontErrors.textContent = "No front image selected.";
+                }
+                if (!backInput.files.length) {
+                    backErrors.textContent = "No back image selected.";
+                }
+                if (frontValid && backValid) {
+                    validationResult.textContent = "Both images passed validation!";
+                    validationResult.className = "result";
+                    validationResult.style.display = "block";
+                    startBtn.disabled = false;
+
+                    document.getElementById(
+                        "citizenshipValidationSection"
+                    ).style.display = "none";
+                    document.getElementById("cameraValidationSection").style.display =
+                        "block";
+                } else {
+                    startBtn.disabled = true;
+                }
+
+                updateSubmitButtonState(); // Update submit button after image validation.
+            }
+
+            /**
+             *  Determines if the submit button should be enabled
+             */
+            function updateSubmitButtonState() {
+                //Only check and change if submitbtn is not null
+                if (submitBtn) {
+                    submitBtn.disabled = !(
+                        videoValidationComplete &&
+                        frontValid &&
+                        backValid
+                    );
+                }
+            }
+
+            /**
+             * Enables the submit button
+             */
+            function enableSubmitButton() {
+                //Only check and change if submitbtn is not null
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                } else {
+                    console.warn("Submit button element not found.");
+                }
+            }
+
+            /**
+             * Disables the submit button
+             */
+            function disableSubmitButton() {
+                //Only check and change if submitbtn is not null
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                } else {
+                    console.warn("Submit button element not found.");
+                }
+            }
+
+            /**
+             * Function to submit the form data
+             */
+            async function submitFormAfterValidation() {
+                // Collect form data
+                const formData = {
+                    "नागरिकता नं.": document.getElementById("englishCitizenship").value,
+                    "नाम": document.getElementById("englishname1").value,
+                    "थर": document.getElementById("englishsurname1").value,
+                    "लिङ्ग": document.getElementById("gender").value,
+                    "जिल्ला": document.getElementById("englishplace1").value,
+                    // "स्थायी ठेगाना": document.getElementById("englishpermanent1").value,
+                    // "जन्म मिति (वि.सं.)": document.getElementById("birth1").value,
+                    "बुबाको नाम": document.getElementById("englishfather").value,
+                    "बुबाको थर": document.getElementById("englishfathersur").value,
+                    // "ना. कि.": document.getElementById("cititype1").value,
+                    // ठेगाना: document.getElementById("englishfatheradd").value,
+                    // "आमाको नाम": document.getElementById("englishmother").value,
+                    // "ना.कि.": document.getElementById("cititype2").value,
+                    // ठेगाना: document.getElementById("englishmotheradd").value,
+                    // Name: document.getElementById("name2").value,
+                    // DateofBirth: document.getElementById("birth2").value,
+                    // Birthplace: document.getElementById("place2").value,
+                    // PermanentAddress: document.getElementById("permanent2").value,
+                    // "जारी मिति": document.getElementById("issue").value,
+                };
+
+                // Send the data to Django using fetch
+                fetch("http://127.0.0.1:8000/submit_data/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        // Add CSRF token here if you enable CSRF protection!
+                    },
+                    body: JSON.stringify(formData), // Convert the object to JSON
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data); // Handle the response from the server
+
+                        if (data.success) {
+                            console.log("Submission successful:", data);
+
+                            // Store the data in sessionStorage
+                            sessionStorage.setItem("resultsData", JSON.stringify(data));
+
+                            // Redirect to the results page
+                            window.location.href = "/results";
+                        } else {
+                            // Submission failed:
+                            console.error("Submission failed:", data.message);
+                        }
+                        mainForm.reset();
+                        handleFileValidation(); //This resets the file values, make sure this behavior is consistent.
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+            }
+            /**
+             * Displays the submit button
+             */
+            function displaySubmitButton() {
+                submitRetryContainer = document.getElementById(
+                    "submitRetryContainer"
+                );
+                if (submitRetryContainer) {
+                    submitRetryContainer.innerHTML = `<button id="submitBtn" class="btn btn-outline-success my-2" type="button">Submit</button>`;
+                    submitBtn = document.getElementById("submitBtn"); //Get the reference here
+                    if (submitBtn) {
+                        submitBtn.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            submitFormAfterValidation();
+                        });
+                    }
+                    enableSubmitButton();
+                } else {
+                    console.warn("Submit button element not found.");
+                }
+                updateSubmitButtonState(); // Update submit button after display.
+            }
+
+            /**
+             * Displays the retry button
+             */
+            function displayRetryButton() {
+                submitRetryContainer = document.getElementById(
+                    "submitRetryContainer"
+                );
+                if (submitRetryContainer) {
+                    submitRetryContainer.innerHTML = `<button id="retryBtn" class="btn btn-outline-warning my-2" type="button">Retry Camera Validation</button>`;
+                    const retryBtn = document.getElementById("retryBtn");
+                    if (retryBtn) {
+                        retryBtn.addEventListener("click", () => {
+                            resetCameraSection();
+                            startCamera();
+                        });
+                    }
+                } else {
+                    console.warn("submitRetryContainer element not found.");
+                }
+                disableSubmitButton();
+                updateSubmitButtonState(); // Update submit button after display.
+            }
+
+            /**
+             * Resets the camera section
+             */
+            function resetCameraSection() {
+                stopCamera();
+                videoValidationComplete = false;
+                videoFrames = [];
+                resultsDiv.innerHTML = "";
+                progressBar.style.width = "0%";
+                progressBar.innerText = "";
+                updateSubmitButtonState();
+            }
+
+            // ---------- EVENT LISTENERS ----------
+            frontInput.addEventListener("change", async () => {
+                updatePreview(frontInput, frontPreview);
+                await handleFileValidation();
+            });
+
+            backInput.addEventListener("change", async () => {
+                updatePreview(backInput, backPreview);
+                await handleFileValidation();
+            });
+
+            startBtn.addEventListener("click", () => {
+                resetCameraSection();
+                startCamera();
+            });
+
+            // Handle form submission
+            mainForm.addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent the default form submission
+
+                if (!frontValid || !backValid) {
+                    alert("Please upload and validate both front and back images.");
+                    console.log(formData);
+                    return;
+                }
+
+                if (!videoValidationComplete) {
+                    alert("Please complete the camera validation before submitting.");
+                    return;
+                }
+
+                submitFormAfterValidation(); // Call submit after checks
+            });
+
+            // ---------- INITIAL SETUP ----------
+            disableSubmitButton();
+            updateSubmitButtonState();
+        });
+    </script>
+</body>
+
+</html>
